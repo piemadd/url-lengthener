@@ -114,9 +114,9 @@ function copyURL() {
 	document.execCommand("copy");
 }
 
-exports.hex2str = (str) => hex2str(str);
-exports.str2hex = (str) => str2hex(str);
-exports.hex2a = (str) => hex2a(str);
-exports.a2hex = (str) => a2hex(str);
-exports.validURL = (url) => validURL(url);
-exports.lengthen = (url) => lengthen(url);
+exports.hex2str = (str) => {return hex2str(str)};
+exports.str2hex = (str) => {return str2hex(str)};
+exports.hex2a = (str) => {return hex2a(str)};
+exports.a2hex = (str) => {return a2hex(str)};
+exports.validURL = (url) => {return validURL(url)};
+exports.lengthen = (url) => {return lengthen(url)};
