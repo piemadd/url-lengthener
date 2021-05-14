@@ -1,6 +1,6 @@
 var exports = {"__esModule": true};
 
-function hex2str(hexx) {
+const hex2str = (hexx) => {
     var hex = hexx.toString();//force conversion
     var str = '';
     for (var i = 0; (i < hex.length && hex.substr(i, 2) !== '00'); i += 2)
@@ -8,7 +8,7 @@ function hex2str(hexx) {
     return str;
 }
 
-function str2hex(str) {
+const str2hex = (str) => {
   var arr = [];
   for (var i = 0, l = str.length; i < l; i ++) {
     var hex = Number(str.charCodeAt(i)).toString(16);
@@ -17,7 +17,7 @@ function str2hex(str) {
   return arr.join('');
 }
 
-function hex2a(str) {
+const hex2a = (str) => {
 	let arr_hex = str.split('');
 	let reformattedArray = arr_hex.map(char => {
 		replacements = {
@@ -44,7 +44,7 @@ function hex2a(str) {
 	return reformattedArray.join('');
 }
 
-function a2hex(str) {
+const a2hex = (str) => {
 	let arr_hex = str.split('');
 	let reformattedArray = arr_hex.map(char => {
 		replacements = {
@@ -72,7 +72,7 @@ function a2hex(str) {
 	return reformattedArray.join('');
 }
 
-function validURL(url) {
+const validURL = (url) => {
 	try {
 		new URL(url);
 	} catch (e) {
@@ -82,20 +82,7 @@ function validURL(url) {
 	return true;
 };
 
-function encodeURL() {
-	let input_url = document.getElementById("input").value;
-	if (validURL(input_url)) {
-		new_url = hex2a(str2hex(input_url));
-		while (new_url.length < 200) {
-			new_url = "áaaÂ" + new_url;
-		}
-		document.getElementById("output").value = "https://aaa.aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.com/a?" + new_url;
-	} else {
-		document.getElementById("output").value = "URL is not valid, please try again.";
-	}
-}
-
-function lengthen(url) {
+const lengthen = (url) => {
 	if (validURL(url)) {
 		new_url = hex2a(str2hex(url));
 		while (new_url.length < 200) {
@@ -107,18 +94,12 @@ function lengthen(url) {
 	}
 }
 
-function copyURL() {
-	var copyText = document.getElementById("output");
-	copyText.select();
-	copyText.setSelectionRange(0, 99999); /* For mobile devices */
-	document.execCommand("copy");
-}
+exports.hex2str = hex2str;
+exports.str2hex = str2hex;
+exports.hex2a = hex2a;
+exports.a2hex = a2hexstr;
+exports.validURL = validURL;
+exports.lengthen = lengthen;
 
-exports.hex2str = (str) => {return hex2str(str)};
-exports.str2hex = (str) => {return str2hex(str)};
-exports.hex2a = (str) => {return hex2a(str)};
-exports.a2hex = (str) => {return a2hex(str)};
-exports.validURL = (url) => {return validURL(url)};
-exports.lengthen = (url) => {return lengthen(url)};
-
+console.log("1.1.6")
 console.log("imported!");
