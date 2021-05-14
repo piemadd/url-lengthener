@@ -1,6 +1,6 @@
 {
   "name": "url-lengthener",
-  "version": "1.2.5",
+  "version": "1.2.6",
   "description": "Are your URLs too short? Use url-lengthener to  s t r e t c h  them out!",
   "main": "url-lengthener-node.js",
   "scripts": {
@@ -13,12 +13,17 @@
   "keywords": [
     "url-shortener",
     "url-lenghtener",
-    "url"
+    "url",
+	"web-utilities",
+	"utilities",
+	"productivity",
+	"cross-platform"
   ],
   "author": "Piero Maddaleni",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/pieromqwerty/url-lengthener/issues"
   },
-  "homepage": "https://github.com/pieromqwerty/url-lengthener#readme"
+  "homepage": "https://github.com/pieromqwerty/url-lengthener#readme",
+  "dependencies": {}
 }

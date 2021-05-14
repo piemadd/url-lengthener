@@ -6,3 +6,4 @@ redirect.js
 style.css
 favicon.ico
 .npmignore
+package-lock.json
