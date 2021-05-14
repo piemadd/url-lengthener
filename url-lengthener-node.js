@@ -97,9 +97,9 @@ const lengthen = (url) => {
 exports.hex2str = hex2str;
 exports.str2hex = str2hex;
 exports.hex2a = hex2a;
-exports.a2hex = a2hexstr;
+exports.a2hex = a2hex;
 exports.validURL = validURL;
 exports.lengthen = lengthen;
 
-console.log("1.1.6")
+console.log("1.1.7")
 console.log("imported!");
