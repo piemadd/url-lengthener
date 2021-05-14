@@ -85,12 +85,23 @@ function encodeURL() {
 	if (validURL(input_url)) {
 		new_url = hex2a(str2hex(input_url));
 		while (new_url.length < 200) {
-			items = ["áaaÂ"];
-			new_url = items[Math.floor(Math.random() * items.length)] + new_url;
+			new_url = "áaaÂ" + new_url;
 		}
 		document.getElementById("output").value = "https://aaa.aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.com/a?" + new_url;
 	} else {
 		document.getElementById("output").value = "URL is not valid, please try again.";
+	}
+}
+
+function lengthen(url) {
+	if (validURL(url)) {
+		new_url = hex2a(str2hex(url));
+		while (new_url.length < 200) {
+			new_url = "áaaÂ" + new_url;
+		}
+		return "https://aaa.aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.com/a?" + new_url;
+	} else {
+		throw new Error("The URL passed is not valid.");
 	}
 }
 
@@ -100,9 +111,3 @@ function copyURL() {
   copyText.setSelectionRange(0, 99999); /* For mobile devices */
   document.execCommand("copy");
 }
-
-//just a quick test to make sure everything works
-//console.log(hex2str(a2hex(hex2a(str2hex("https://piemadd.com/")))));
-
-//used for testing purposes
-console.log(hex2a(str2hex("​")))
