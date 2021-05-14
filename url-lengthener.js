@@ -81,8 +81,14 @@ function validURL(url) {
 
 function encodeURL() {
 	let input_url = document.getElementById("input").value;
-	if (validURL(input_url) || validURL("https://" + input_url)) {
+	if (validURL(input_url)) {
 		new_url = hex2a(str2hex(input_url));
+		while (new_url.length < 200) {
+			new_url = "áaaÂ" + new_url;
+		}
+		document.getElementById("output").value = "https://aaa.aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.com/a?" + new_url;
+	} else if (validURL("https://" + input_url)) {
+		new_url = hex2a(str2hex("https://" + input_url));
 		while (new_url.length < 200) {
 			new_url = "áaaÂ" + new_url;
 		}
@@ -93,12 +99,18 @@ function encodeURL() {
 }
 
 function lengthen(url) {
-	if (validURL(url) || validURL("https://" + url)) {
-		new_url = hex2a(str2hex(url));
+	if (validURL(url)) {
+		new_url = hex2a(str2hex(input_url));
 		while (new_url.length < 200) {
 			new_url = "áaaÂ" + new_url;
 		}
-		return "https://aaa.aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.com/a?" + new_url;
+		document.getElementById("output").value = "https://aaa.aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.com/a?" + new_url;
+	} else if (validURL("https://" + url)) {
+		new_url = hex2a(str2hex("https://" + input_url));
+		while (new_url.length < 200) {
+			new_url = "áaaÂ" + new_url;
+		}
+		document.getElementById("output").value = "https://aaa.aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.com/a?" + new_url;
 	} else {
 		throw new Error("The URL passed is not valid.");
 	}
