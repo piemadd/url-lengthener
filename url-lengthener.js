@@ -1,5 +1,3 @@
-var exports = {"__esModule": true};
-
 function hex2str(hexx) {
     var hex = hexx.toString();//force conversion
     var str = '';
@@ -76,7 +74,6 @@ function validURL(url) {
 	try {
 		new URL(url);
 	} catch (e) {
-		console.error(e);
 		return false;
 	}
 	return true;
@@ -84,7 +81,7 @@ function validURL(url) {
 
 function encodeURL() {
 	let input_url = document.getElementById("input").value;
-	if (validURL(input_url)) {
+	if (validURL(input_url) || validURL("https://" + input_url)) {
 		new_url = hex2a(str2hex(input_url));
 		while (new_url.length < 200) {
 			new_url = "áaaÂ" + new_url;
@@ -96,7 +93,7 @@ function encodeURL() {
 }
 
 function lengthen(url) {
-	if (validURL(url)) {
+	if (validURL(url) || validURL("https://" + url)) {
 		new_url = hex2a(str2hex(url));
 		while (new_url.length < 200) {
 			new_url = "áaaÂ" + new_url;
@@ -113,10 +110,3 @@ function copyURL() {
 	copyText.setSelectionRange(0, 99999); /* For mobile devices */
 	document.execCommand("copy");
 }
-
-exports.hex2str = (str) => {return hex2str(str)};
-exports.str2hex = (str) => {return str2hex(str)};
-exports.hex2a = (str) => {return hex2a(str)};
-exports.a2hex = (str) => {return a2hex(str)};
-exports.validURL = (url) => {return validURL(url)};
-exports.lengthen = (url) => {return lengthen(url)};
