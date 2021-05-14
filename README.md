@@ -47,4 +47,9 @@ console.log(lengthened_url);
 
 #### API
 
-The API is currently planned, but check back in a few days, as it will probably be available by then.
+Really simple, ok? You send a `GET` request here:
+```
+https://api.aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.com/a?url=[YOUR_URL_HERE]
+```
+
+`[YOUR_URL_HERE]` is where you put the URL you want to lengthen. A plaintext response with the lengthened URL is returned unless the URL is invalid, which instead `INVALID_URL` is returned. 
