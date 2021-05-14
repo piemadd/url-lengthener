@@ -1,3 +1,5 @@
+var exports = {"__esModule": true};
+
 function hex2str(hexx) {
     var hex = hexx.toString();//force conversion
     var str = '';
@@ -106,8 +108,15 @@ function lengthen(url) {
 }
 
 function copyURL() {
-  var copyText = document.getElementById("output");
-  copyText.select();
-  copyText.setSelectionRange(0, 99999); /* For mobile devices */
-  document.execCommand("copy");
+	var copyText = document.getElementById("output");
+	copyText.select();
+	copyText.setSelectionRange(0, 99999); /* For mobile devices */
+	document.execCommand("copy");
 }
+
+exports.hex2str = (str) => hex2str(str);
+exports.str2hex = (str) => str2hex(str);
+exports.hex2a = (str) => hex2a(str);
+exports.a2hex = (str) => a2hex(str);
+exports.validURL = (url) => validURL(url);
+exports.lengthen = (url) => lengthen(url);

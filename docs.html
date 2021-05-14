@@ -16,9 +16,16 @@
 		<pre><code>&ltscript src="https://cdn.jsdelivr.net/npm/url-lengthener@latest/url-lengthener.min.js"&gt&lt/script&gt</code></pre>
 		<pre><code>&ltscript src="https://aaa.aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.com/url-lengthener.min.js"&gt&lt/script&gt</code></pre>
 		<p>If you prefer the unminified version of the code, just remove the <code>.min</code> from whichever link you are using.
-		<h4>Use the script:</h4>
+		<h4>Use the script: (web)</h4>
 		<p>Using the script is quite simple, as it is less than 115 lines in length. Encoding a url takes two steps, converting from a url to base16, and then base16 to the string of "A"s. While you could call these functions (<code>str2hex()</code> and <code>hex2a()</code> respectively), the easiest way to get a URL encoded is to use the <code>lengthen(url)</code> function, where <i>url</i> is the URL which you would like to lenghten. The function then returns a lenghened URL, which when visited, will redirect to it's final destination. </p>
 		<p>Using the script in Node.js is not currently possible (through npm that is), but feel free to add support via a PR <a href="https://github.com/pieromqwerty/url-lengthener">on Github</a>. You could also go the lazy route and paste the js file's contents inside of your js file.</p>
+		<h4>Use the script: (Node)</h4>
+		<li>Install the npm package (<code>url-lengthener</code>)</li>
+		<li>Require the library:<pre><code>const urlLengthener = require("url-lengthener")
+		</code></pre></li>
+		<li>Use the <code>lenghten()</code> function to run the code:<pre><code>let lengthened_url = lengthen(<span class="hljs-string">"https://piemadd.com/"</span>)<span class="hljs-comment">;</span>
+		console.log(lengthened_url)<span class="hljs-comment">;</span>
+		</code></pre></li>
 		<h4>API</h4>
 		<p>The API is currently planned, but check back in a few days, as it will probably be available by then.</p>
 	</body>

@@ -14,11 +14,22 @@ The script is located at [`/url-lengthener.js`](/url-lengthener.js) of this site
 ```
 If you prefer the unminified version of the code, just remove the `.min` from whichever link you are using.
 
-#### Use the script:
+#### Use the script (web):
 
 Using the script is quite simple, as it is less than 115 lines in length. Encoding a url takes two steps, converting from a url to base16, and then base16 to the string of "A"s. While you could call these functions (`str2hex()` and `hex2a()` respectively), the easiest way to get a URL encoded is to use the `lengthen(url)` function, where _url_ is the URL which you would like to lenghten. The function then returns a lenghened URL, which when visited, will redirect to it's final destination.
 
-Using the script in Node.js is not currently possible (through npm that is), but feel free to add support via a PR [on Github](https://github.com/pieromqwerty/url-lengthener). You could also go the lazy route and paste the js file's contents inside of your js file.
+#### Use the script (Node):
+
+1. Install the npm package (`url-lengthener`)
+2. Require the library:
+```js
+const urlLengthener = require("url-lengthener")
+```
+3. Use the `lenghten()` function to run the code:
+```js
+let lengthened_url = lengthen("https://piemadd.com/");
+console.log(lengthened_url);
+```
 
 #### API
 
