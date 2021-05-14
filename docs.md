@@ -27,7 +27,7 @@ const urlLengthener = require("url-lengthener")
 ```
 3. Use the `lenghten()` function to run the code:
 ```js
-let lengthened_url = lengthen("https://piemadd.com/");
+let lengthened_url = urlLengthener.lengthen("https://piemadd.com/");
 console.log(lengthened_url);
 ```
 
