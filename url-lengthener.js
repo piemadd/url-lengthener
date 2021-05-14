@@ -1,3 +1,5 @@
+var baseURL = "";
+
 function hex2str(hexx) {
     var hex = hexx.toString();//force conversion
     var str = '';
@@ -81,18 +83,30 @@ function validURL(url) {
 
 function encodeURL() {
 	let input_url = document.getElementById("input").value;
+	console.log(document.getElementById("path").checked)
+	if (document.getElementById("path").checked == true) {
+		baseURL = "https://api.aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.com/";
+	} else {
+		baseURL = "https://aaa.aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.com/a?";
+	}
 	if (validURL(input_url)) {
 		new_url = hex2a(str2hex(input_url));
 		while (new_url.length < 200) {
 			new_url = "áaaÂ" + new_url;
 		}
-		document.getElementById("output").value = "https://aaa.aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.com/a?" + new_url;
+		document.getElementById("output").value = baseURL + new_url;
 	} else if (validURL("https://" + input_url)) {
 		new_url = hex2a(str2hex("https://" + input_url));
 		while (new_url.length < 200) {
 			new_url = "áaaÂ" + new_url;
 		}
-		document.getElementById("output").value = "https://aaa.aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.com/a?" + new_url;
+		document.getElementById("output").value = baseURL + new_url;
+	} else if (document.getElementById("override").checked) {
+		new_url = hex2a(str2hex("https://" + input_url));
+		while (new_url.length < 200) {
+			new_url = "áaaÂ" + new_url;
+		}
+		document.getElementById("output").value = baseURL + new_url;
 	} else {
 		document.getElementById("output").value = "URL is not valid, please try again.";
 	}
@@ -104,13 +118,13 @@ function lengthen(url) {
 		while (new_url.length < 200) {
 			new_url = "áaaÂ" + new_url;
 		}
-		document.getElementById("output").value = "https://aaa.aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.com/a?" + new_url;
+		return baseURL + new_url;
 	} else if (validURL("https://" + url)) {
 		new_url = hex2a(str2hex("https://" + input_url));
 		while (new_url.length < 200) {
 			new_url = "áaaÂ" + new_url;
 		}
-		document.getElementById("output").value = "https://aaa.aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.com/a?" + new_url;
+		return baseURL + new_url;
 	} else {
 		throw new Error("The URL passed is not valid.");
 	}

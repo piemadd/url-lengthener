@@ -1,6 +1,6 @@
 {
   "name": "url-lengthener",
-  "version": "1.3.1",
+  "version": "1.4.0",
   "description": "Are your URLs too short? Use url-lengthener to  s t r e t c h  them out!",
   "main": "url-lengthener-node.js",
   "scripts": {
