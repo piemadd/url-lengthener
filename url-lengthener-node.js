@@ -121,4 +121,4 @@ exports.a2hex = (str) => {return a2hex(str)};
 exports.validURL = (url) => {return validURL(url)};
 exports.lengthen = (url) => {return lengthen(url)};
 
-exports = 42;
+console.log("imported!");
