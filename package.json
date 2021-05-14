@@ -1,0 +1,24 @@
+{
+  "name": "url-lengthener",
+  "version": "1.0.1",
+  "description": "Are your URLs too short? Use url-lengthener to  s t r e t c h  them out!",
+  "main": "url-lengthener.js",
+  "scripts": {
+    "test": "node url-lengthener.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pieromqwerty/url-lengthener.git"
+  },
+  "keywords": [
+    "url-shortener",
+    "url-lenghtener",
+    "url"
+  ],
+  "author": "Piero Maddaleni",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pieromqwerty/url-lengthener/issues"
+  },
+  "homepage": "https://github.com/pieromqwerty/url-lengthener#readme"
+}
