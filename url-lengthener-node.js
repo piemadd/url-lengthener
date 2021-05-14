@@ -1,4 +1,4 @@
-var exports = {"__esModule": true};
+//var exports = {"__esModule": true};
 
 const hex2str = (hexx) => {
     var hex = hexx.toString();//force conversion
