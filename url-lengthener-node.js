@@ -101,5 +101,7 @@ exports.a2hex = a2hex;
 exports.validURL = validURL;
 exports.lengthen = lengthen;
 
+console.log(exports)
+
 console.log("1.1.7")
 console.log("imported!");
