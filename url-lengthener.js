@@ -20,7 +20,7 @@ function str2hex(str) {
 function hex2a(str) {
 	let arr_hex = str.split('');
 	let reformattedArray = arr_hex.map(char => {
-		replacements = {
+		const replacements = {
 			'0': 'a',
 			'1': 'à',
 			'2': 'á',
@@ -47,7 +47,7 @@ function hex2a(str) {
 function a2hex(str) {
 	let arr_hex = str.split('');
 	let reformattedArray = arr_hex.map(char => {
-		replacements = {
+		const replacements = {
 			'a': '0',
 			'à': '1',
 			'á': '2',
