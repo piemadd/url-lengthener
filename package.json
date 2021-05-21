@@ -3,6 +3,7 @@
   "version": "1.4.3",
   "description": "Are your URLs too short? Use url-lengthener to  s t r e t c h  them out!",
   "main": "url-lengthener-node.js",
+  "types": "url-lengthener-node.d.ts",
   "scripts": {
     "test": "node url-lengthener.js"
   },
@@ -14,10 +15,10 @@
     "url-shortener",
     "url-lenghtener",
     "url",
-	"web-utilities",
-	"utilities",
-	"productivity",
-	"cross-platform"
+    "web-utilities",
+    "utilities",
+    "productivity",
+    "cross-platform"
   ],
   "author": "Piero Maddaleni",
   "license": "ISC",
