@@ -33,3 +33,9 @@ export declare const validURL: (url: string) => boolean;
  *  @param url The orignal URL
  */
 export declare const lengthen: (url: string) => string;
+
+/**
+ *  Lengthen a URL but with greater reliability at the cost of speed
+ *  @param url The orignal URL
+ */
+export declare const lengthenAsPath: (url: string) => string;
