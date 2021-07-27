@@ -94,9 +94,22 @@ const lengthen = (url) => {
 	}
 }
 
+const lengthenAsPath = (url) => {
+	if (validURL(url)) {
+		new_url = hex2a(str2hex(url));
+		while (new_url.length < 200) {
+			new_url = "áaaÂ" + new_url;
+		}
+		return "https://api.aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.com/" + new_url;
+	} else {
+		throw new Error("The URL passed is not valid.");
+	}
+}
+
 exports.hex2str = hex2str;
 exports.str2hex = str2hex;
 exports.hex2a = hex2a;
 exports.a2hex = a2hex;
 exports.validURL = validURL;
 exports.lengthen = lengthen;
+exports.lengthenAsPath = lengthenAsPath;
