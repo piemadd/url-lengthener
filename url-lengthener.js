@@ -73,11 +73,13 @@ function a2hex(str) {
 }
 
 function validURL(url) {
+	console.log(url)
 	try {
-		new URL(url);
+		console.log(new URL(url));
 	} catch (e) {
 		return false;
 	}
+	console.log(true)
 	return true;
 };
 

@@ -7,7 +7,7 @@ Your date will be impressed with the sheer size of your URLs, and forget having 
 Disclaimer: Since there is a maximum letter count to a URL, there is a slight chance your resulting URL will be too long to use. No worries, try running it through a site like [bit.ly](https://bitly.com/) and then paste that one over here. Every resulting URL ends up having a minimum number of characters, so your URL will still be plenty long!
 
 Links:
-- Made with ❤️ by [Piero Maddaleni](https://piemadd.com/)
+- Made with ❤️ by [Piero™](https://piemadd.com/)
 - [Website source code on Replit](https://replit.com/@piemadd/url-lengthener)
 - [Project source code on Github](https://github.com/pieromqwerty/url-lengthener)
 - [Package on NPM](https://www.npmjs.com/package/url-lengthener).
