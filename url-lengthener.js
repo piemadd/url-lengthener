@@ -1,23 +1,21 @@
-var baseURL = "";
-
-function hex2str(hexx) {
-    var hex = hexx.toString();//force conversion
-    var str = '';
-    for (var i = 0; (i < hex.length && hex.substr(i, 2) !== '00'); i += 2)
+const hex2str = ((hexx) => {
+    let hex = hexx.toString();//force conversion
+    let str = '';
+    for (let i = 0; (i < hex.length && hex.substr(i, 2) !== '00'); i += 2)
         str += String.fromCharCode(parseInt(hex.substr(i, 2), 16));
     return str;
-}
+})
 
-function str2hex(str) {
-  var arr = [];
-  for (var i = 0, l = str.length; i < l; i ++) {
-    var hex = Number(str.charCodeAt(i)).toString(16);
-    arr.push(hex);
-  }
-  return arr.join('');
-}
+const str2hex = ((str) => {
+    let arr = [];
+    for (let i = 0, l = str.length; i < l; i ++) {
+        let hex = Number(str.charCodeAt(i)).toString(16);
+        arr.push(hex);
+    }
+    return arr.join('');
+})
 
-function hex2a(str) {
+const hex2a = ((str) => {
 	let arr_hex = str.split('');
 	let reformattedArray = arr_hex.map(char => {
 		const replacements = {
@@ -42,9 +40,9 @@ function hex2a(str) {
 	})
 
 	return reformattedArray.join('');
-}
+})
 
-function a2hex(str) {
+const a2hex = ((str) => {
 	let arr_hex = str.split('');
 	let reformattedArray = arr_hex.map(char => {
 		const replacements = {
@@ -70,9 +68,9 @@ function a2hex(str) {
 	})
 
 	return reformattedArray.join('');
-}
+})
 
-function validURL(url) {
+const validURL = ((url) => {
 	console.log(url)
 	try {
 		console.log(new URL(url));
@@ -81,61 +79,47 @@ function validURL(url) {
 	}
 	console.log(true)
 	return true;
-};
+})
 
-function encodeURL() {
+const encodeURL = (() => {
 	let input_url = document.getElementById("input").value;
-	console.log(document.getElementById("path").checked)
-	if (document.getElementById("path").checked == true) {
-		baseURL = "https://api.aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.com/";
-	} else {
-		baseURL = "https://aaa.aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.com/a?";
-	}
-	if (validURL(input_url)) {
-		new_url = hex2a(str2hex(input_url));
-		while (new_url.length < 200) {
-			new_url = "áaaÂ" + new_url;
-		}
-		document.getElementById("output").value = baseURL + new_url;
-	} else if (validURL("https://" + input_url)) {
-		new_url = hex2a(str2hex("https://" + input_url));
-		while (new_url.length < 200) {
-			new_url = "áaaÂ" + new_url;
-		}
-		document.getElementById("output").value = baseURL + new_url;
-	} else if (document.getElementById("override").checked) {
-		new_url = hex2a(str2hex("https://" + input_url));
-		while (new_url.length < 200) {
-			new_url = "áaaÂ" + new_url;
-		}
-		document.getElementById("output").value = baseURL + new_url;
+
+    let originalURL = "https://" + input_url.replace('https://', '').replace('http://', '')
+    
+	if (validURL(originalURL) || document.getElementById("override").checked) {
+		new_url = lengthen(originalURL);
+		document.getElementById("output").value = new_url;
 	} else {
 		document.getElementById("output").value = "URL is not valid, please try again.";
 	}
-}
+})
 
-function lengthen(url) {
-	baseURL = "https://api.aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.com/";
-	if (validURL(url)) {
+const getRandom = ((list) => {
+    return list[Math.floor((Math.random()*list.length))];
+})
+
+const lengthen = ((url) => {
+    const letters = ['a', 'à', 'á', 'â', 'ã', 'ä', 'å', 'æ', 'A', 'À', 'Á', 'Â', 'Ã', 'Ä', 'Å', 'Æ']
+    
+	let baseURL = "https://aaa.aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.com/";
+
+    let filler = 'a';
+    
+	if (validURL("https://" + url.replace('https://', '').replace('http://', ''))) {
 		new_url = hex2a(str2hex(url));
-		while (new_url.length < 200) {
-			new_url = "áaaÂ" + new_url;
+        
+		while (new_url.length + filler.length < 200) {
+			filler = filler + getRandom(letters);
 		}
-		return baseURL + new_url;
-	} else if (validURL("https://" + url)) {
-		new_url = hex2a(str2hex("https://" + url));
-		while (new_url.length < 200) {
-			new_url = "áaaÂ" + new_url;
-		}
-		return baseURL + new_url;
+		return baseURL + filler + "?" + new_url;
 	} else {
 		throw new Error("The URL passed is not valid.");
 	}
-}
+})
 
-function copyURL() {
-	var copyText = document.getElementById("output");
+const copyURL = (() => {
+	let copyText = document.getElementById("output");
 	copyText.select();
 	copyText.setSelectionRange(0, 99999); /* For mobile devices */
 	document.execCommand("copy");
-}
+})
