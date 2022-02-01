@@ -1,5 +1,9 @@
 # URL Lengthener
 
+[![](https://data.jsdelivr.com/v1/package/npm/url-lengthener/badge?.png)](https://www.jsdelivr.com/package/npm/url-lengthener)
+[![](https://img.shields.io/bundlephobia/min/url-lengthener?style=flat-square&.png)](https://www.jsdelivr.com/package/npm/url-lengthener)
+[![](https://img.shields.io/npm/dm/url-lengthener?style=flat-square&.png)](https://www.jsdelivr.com/package/npm/url-lengthener)
+
 Are you tired of your URLs being just too darn short? Worry no further, as [aaa.aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.com](https://aaa.aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.com/) has got your back. No need to be anxious about people thinking the size of your URL is too small, as it will guaranteed be the largest one around. So what are you waiting for? Give it a go!
 
 Your date will be impressed with the sheer size of your URLs, and forget having to take time spelling them out to your coworkers; just yell at the top of your lungs. Want to automate it? Check out the docs for more info.
