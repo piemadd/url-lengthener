@@ -98,7 +98,7 @@ const getRandom = ((list) => {
     return list[Math.floor((Math.random()*list.length))];
 })
 
-const lengthen = ((url) => {
+const lengthen = ((url, minLength = 200) => {
     const letters = ['a', 'à', 'á', 'â', 'ã', 'ä', 'å', 'æ', 'A', 'À', 'Á', 'Â', 'Ã', 'Ä', 'Å', 'Æ']
     
 	let baseURL = "https://aaa.aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.com/";
@@ -108,7 +108,7 @@ const lengthen = ((url) => {
 	if (validURL("https://" + url.replace('https://', '').replace('http://', ''))) {
 		new_url = hex2a(str2hex(url));
         
-		while (new_url.length + filler.length < 200) {
+		while (new_url.length + filler.length < minLength) {
 			filler = filler + getRandom(letters);
 		}
 		return baseURL + filler + "?" + new_url;
