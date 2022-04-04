@@ -101,7 +101,7 @@ const getRandom = ((list) => {
 const lengthen = ((url, minLength = 200) => {
     const letters = ['a', 'à', 'á', 'â', 'ã', 'ä', 'å', 'æ', 'A', 'À', 'Á', 'Â', 'Ã', 'Ä', 'Å', 'Æ']
     
-	let baseURL = "https://aaa.aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.com/";
+	let baseURL = "https://aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.com/";
 
     let filler = 'a';
     

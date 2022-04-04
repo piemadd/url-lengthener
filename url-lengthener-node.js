@@ -88,7 +88,7 @@ const lengthen = (url) => {
 		while (new_url.length < 200) {
 			new_url = "áaaÂ" + new_url;
 		}
-		return "https://aaa.aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.com/a?" + new_url;
+		return "https://aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.com/a?" + new_url;
 	} else {
 		throw new Error("The URL passed is not valid.");
 	}

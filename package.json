@@ -1,6 +1,6 @@
 {
   "name": "url-lengthener",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "Are your URLs too short? Use url-lengthener to  s t r e t c h  them out!",
   "main": "url-lengthener-node.js",
   "types": "url-lengthener-node.d.ts",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pieromqwerty/url-lengthener.git"
+    "url": "git+https://github.com/piemadd/url-lengthener.git"
   },
   "keywords": [
     "url-shortener",
@@ -23,8 +23,8 @@
   "author": "Piero™",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/pieromqwerty/url-lengthener/issues"
+    "url": "https://github.com/piemadd/url-lengthener/issues"
   },
-  "homepage": "https://github.com/pieromqwerty/url-lengthener#readme",
+  "homepage": "https://github.com/piemadd/url-lengthener#readme",
   "dependencies": {}
 }
